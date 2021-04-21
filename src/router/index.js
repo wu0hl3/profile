@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const Home = () => import('/@/views/Home.vue');
 const Contact = () => import('/@/views/Contact.vue');
@@ -17,13 +17,15 @@ const routes = [
     path: '/contact',
     name: Contact,
     component: Contact,
-  }, {
-    path: '*', redirect: '/'
-  }
+  }, 
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  },
 ]
 
 const router = createRouter({
-  history: createWebHistory('/profile/'),
+  history: createWebHashHistory('/profile/'),
   routes,
 });
 

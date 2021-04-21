@@ -9,7 +9,6 @@
           href="#Info"
           class="writing-vertical-lr lg:writing-horizontal font-semibold text-gray-600 p-5 block"
           :class="{ 'text-gray-900': active }"
-          @click.prevent="anchorHandler"
           >簡介</a
         >
       </li>
@@ -73,13 +72,13 @@ export default {
       active: false,
     };
   },
-  methods: {
-    anchorHandler() {
-      console.log(event);
-      console.log(event.target);
-      console.log(this.$refs.Info);
-      let a = document.querySelector('#Info');
-      console.log(a);
+  // methods: {
+  //   anchorHandler() {
+  //     console.log(event);
+  //     console.log(event.target);
+  //     console.log(this.$refs.Info);
+  //     let a = document.querySelector('#Info');
+  //     console.log(a);
       // var anchor = document.querySelector('a[href="#dest"]');
       // var target = document.getElementById('dest');
       // anchor.addEventListener('click', function (e) {
@@ -88,12 +87,12 @@ export default {
       //     window.scrollTo({ behavior: 'smooth', top: target.offsetTop });
       //   }
       // });
-    },
-  },
-  mounted() {
-    const a = document.querySelector('#Info');
-    console.log(a.offsetTop);
-  },
+  //   },
+  // },
+  // mounted() {
+  //   const a = document.querySelector('#Info');
+  //   console.log(a.offsetTop);
+  // },
 };
 </script>
 

@@ -18,7 +18,11 @@
           />
         </svg>
       </div>
-      <h3 class="font-bold text-2xl text-gray-50 text-center hidden lg:block absolute top-24 left-48 tracking-wider">邱騰輝</h3>
+      <h3
+        class="font-bold text-2xl text-gray-50 text-center hidden lg:block absolute top-24 left-48 tracking-wider"
+      >
+        邱騰輝
+      </h3>
     </div>
     <div class="px-2 mt-20 pb-5 lg:px-20 lg:mt-5 lg:ml-28">
       <h3 class="font-bold text-2xl text-center lg:hidden">邱騰輝</h3>
@@ -33,7 +37,7 @@
       </div>
     </div>
   </section>
-  <Section id = "Education">
+  <Section id="Education">
     <template v-slot:title>學歷</template>
     <template v-slot:content
       ><h4 class="font-bold text-xl m-3 ml-0">國立中正大學</h4>
@@ -56,16 +60,19 @@
     <template v-slot:title>求職條件</template>
     <template v-slot:content>
       <div class="pb-3 border-b border-gray-300">
-        <OneLine title="希望性質" content="全職工作" />
+        <OneLine v-for="item in condition1" :title="item.title" :content="item.content" :key="item.title"/>
+        <!-- <OneLine title="希望性質" content="全職工作" />
         <OneLine title="上班時段" content="日班" />
         <OneLine title="可上班日" content="錄取後一周內" />
         <OneLine title="希望待遇" content="依公司規定" />
-        <OneLine title="希望地點" content="新竹縣市" />
+        <OneLine title="希望地點" content="新竹縣市" /> -->
       </div>
       <div class="pt-3">
-        <OneLine title="希望職稱" content="前端、全端工程師" />
+        <OneLine v-for="item in condition2" :title="item.title" :content="item.content" :key="item.title"/>
+
+        <!-- <OneLine title="希望職稱" content="前端、全端工程師" />
         <OneLine title="希望職類" content="網頁設計師、Internet程式設計師" />
-        <OneLine title="工作內容" content="前端切版、資料視覺化、API串接" />
+        <OneLine title="工作內容" content="前端切版、資料視覺化、API串接" /> -->
       </div>
     </template>
   </Section>
@@ -111,6 +118,23 @@ import OneLine from '/@/components/OneLine.vue';
 export default {
   name: 'Home',
   components: { Section, OneLine },
+  data() {
+    return {
+      condition1: [
+        { 'title': '希望性質', 'content': '全職工作' },
+        { 'title': '上班時段', 'content': '日班' },
+        { 'title': '可上班日', 'content': '錄取後一周內' },
+        { 'title': '希望待遇', 'content': '依公司規定' },
+        { 'title': '希望地點', 'content': '新竹縣市' },
+        { 'title': '希望性質', 'content': '全職工作' },
+      ],
+      condition2: [
+        { title: '希望職稱', content: '前端、全端工程師' },
+        { title: '希望職類', content: '網頁設計師、Internet程式設計師' },
+        { title: '可上班日', content: '工作內容' },
+      ],
+    }
+  },
 };
 </script>
 
