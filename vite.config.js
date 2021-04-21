@@ -8,6 +8,6 @@ module.exports = {
   optimizeDeps: {
     include: ["swiper/vue"],
   },
-  base:'/profile/'
+  base:'./profile/'
   
 }
