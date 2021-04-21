@@ -1,0 +1,24 @@
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  #app {
+    @apply font-sans bg-gray-100;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .writing-vertical-lr {
+      writing-mode: vertical-lr;
+    }
+    .writing-horizontal {
+      writing-mode: horizontal-tb;
+    }
+  }
+}
