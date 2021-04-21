@@ -17,11 +17,13 @@ const routes = [
     path: '/contact',
     name: Contact,
     component: Contact,
-  },
+  }, {
+    path: '*', redirect: '/'
+  }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/profile/'),
   routes,
 });
 
